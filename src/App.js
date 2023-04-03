@@ -4,7 +4,7 @@ import './App.css';
 import React, { useState } from "react";
 
 function Library() {
-  const [MyBooks, setMyBooks] = useState([]);
+  const [myBooks, setMyBooks] = useState([]);
   async function getBooks() {
     let { data: Books, error } = await supabase
       .from('Books')
@@ -15,7 +15,7 @@ function Library() {
   return (
     <table>
     {
-      MyBooks.map(b => (
+      myBooks.map(b => (
         <tr>
           <td>{b.title}</td>
           <td>{b.author}</td>
@@ -89,8 +89,8 @@ function App() {
         <h1>My All Time Favorite Books</h1>
         <p>Page number will be blue if the number exceeds 400 pages</p>
         <Display />
-        <Library />
         <p>The Source for the images comes from their respective Wikipedia pages</p>
+        <Library />
       </header>
     </div>
   );
