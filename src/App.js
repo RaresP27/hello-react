@@ -1,5 +1,5 @@
-import { supabase } from './supabaseClient'
-import logo from './RM_Logo.png'
+import { supabase } from './supabaseClient';
+import logo from './RM_Logo.png';
 import './App.css';
 import React, { useState } from "react";
 
