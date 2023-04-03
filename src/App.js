@@ -1,5 +1,32 @@
+import { supabase } from './supabaseClient'
 import logo from './RM_Logo.png'
 import './App.css';
+import React, { useEffect, useState } from "react";
+
+function Library() {
+  const [myBooks, setMyBooks] = useState([]);
+  async function getBooks() {
+    let { data: Books, error } = await supabase
+      .from('Books')
+      .select('*')
+    setMyBooks(Books);
+  }
+  getBooks();
+  return (
+    <table>
+    {
+      myBooks.map(b => (
+        <tr>
+          <td>{b.title}</td>
+          <td>{b.author}</td>
+          <td>{b.isbn}</td>
+          <td>{b.description}</td>
+        </tr>
+      ))
+    }
+    </table>
+  )
+}
 
 function MyInfo() {
   return (
@@ -63,6 +90,8 @@ function App() {
         <h1>My All Time Favorite Books</h1>
         <p>Page number will be blue if the number exceeds 400 pages</p>
         <Display />
+        <Library />
+        <p>The Source for the images comes from their respective Wikipedia pages</p>
       </header>
     </div>
   );
