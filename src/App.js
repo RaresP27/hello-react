@@ -1,7 +1,7 @@
 import { supabase } from './supabaseClient'
 import logo from './RM_Logo.png'
 import './App.css';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function Library() {
   const [myBooks, setMyBooks] = useState([]);
