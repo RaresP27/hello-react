@@ -18,8 +18,8 @@ function Library() {
       myBooks.map(b => (
         <tr className='books'>
           <td className='books'>{b.title}</td>
-          <td>{b.author}</td>
-          <td>{b.isbn}</td>
+          <td className='books'>{b.author}</td>
+          <td className='books'>{b.isbn}</td>
         </tr>
       ))
     }
