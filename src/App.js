@@ -4,7 +4,7 @@ import './App.css';
 import React, { useState } from "react";
 
 function Library() {
-  const [myBooks, setMyBooks] = useState([]);
+  const [MyBooks, setMyBooks] = useState([]);
   async function getBooks() {
     let { data: Books } = await supabase
       .from('Books')
@@ -15,7 +15,7 @@ function Library() {
   return (
     <table>
     {
-      myBooks.map(b => (
+      MyBooks.map(b => (
         <tr>
           <td>{b.title}</td>
           <td>{b.author}</td>
