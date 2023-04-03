@@ -6,7 +6,7 @@ import React, { useState } from "react";
 function Library() {
   const [MyBooks, setMyBooks] = useState([]);
   async function getBooks() {
-    let { data: Books } = await supabase
+    let { data: Books, error } = await supabase
       .from('Books')
       .select('*')
     setMyBooks(Books);
@@ -52,7 +52,7 @@ function MyLogoF() {
   )
 }
 
-const Books = [
+const books = [
   {id: 1, title: 'The Children of Hurin', author: "J.R.R. Tolkein",pagenumber: '320',misOver400Pages: false, image: 'https://upload.wikimedia.org/wikipedia/en/8/85/The_Children_of_Hurin_cover.jpg', width: '260', height: '384' },
   {id: 2, title: 'The Fellowship of The Ring', author: "J.R.R. Tolkein",pagenumber: '423', isOver400Pages: true, image: 'https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif', width: '250', height: '419' 	 },
   {id: 3, title: 'The Two Towers', author: "J.R.R. Tolkein", pagenumber: '352', isOver400Pages: false, image: 'https://upload.wikimedia.org/wikipedia/en/a/a1/The_Two_Towers_cover.gif', width: '250', height: '419'  },
@@ -61,7 +61,7 @@ const Books = [
 
 
 function Display() {
-  const BookList = Books.map(book => 
+  const BookList = books.map(book => 
     <>
     <h2>
       {book.title}
