@@ -37,7 +37,7 @@
   }
 }
 
-table, tr, td {
+.books {
   border: 3px solid;
   background-color: #1d1b31;
   color: white;
