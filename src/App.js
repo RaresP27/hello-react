@@ -20,7 +20,6 @@ function Library() {
           <td>{b.title}</td>
           <td>{b.author}</td>
           <td>{b.isbn}</td>
-          <td>{b.description}</td>
         </tr>
       ))
     }
